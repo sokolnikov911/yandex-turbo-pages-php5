@@ -1,5 +1,5 @@
 {
-  "name": "sokolnikov911/yandex-turbo-pages",
+  "name": "sokolnikov911/yandex-turbo-pages-php5",
   "type": "library",
   "description": "Simple Yandex Turbo Pages RSS writer library for PHP 5.4 or later.",
   "keywords": [
