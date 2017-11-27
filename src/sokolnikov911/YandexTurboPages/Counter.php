@@ -18,7 +18,8 @@ class Counter implements CounterInterface
     private $type;
     private $id;
 
-    public function __construct($type, $id){
+    public function __construct($type, $id)
+    {
         $this->type = $type;
         $this->id = $id;
     }
