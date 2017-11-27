@@ -1,17 +1,17 @@
-PHP7 RSS feed генератор для Турбо-страниц Яндекса
+PHP5 RSS feed генератор для Турбо-страниц Яндекса
 =====================================
 
-[![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages)
-[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
-[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages)
+[![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+[![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+[![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+[![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
+[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
 
 
 Генератор валидного RSS потока для Турбо-страниц Яндекса. Для этой работы этой версии пакета
-необходим PHP как минимум 7 версии.
+необходим PHP как минимум 5.4 версии.
 
 
 ## Пример использования
@@ -113,7 +113,7 @@ composer.phar update
  
 ## Требования
 
-Для RSS feed генератор для Турбо-страниц Яндекса требуется PHP версии не ниже 7,
+Для RSS feed генератор для Турбо-страниц Яндекса требуется PHP версии не ниже 5.4,
 т.к. в библиотеке используется полезнейшая штука − контроль типов.
 
 
