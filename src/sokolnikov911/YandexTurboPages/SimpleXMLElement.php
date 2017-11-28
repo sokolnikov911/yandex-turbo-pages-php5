@@ -16,7 +16,7 @@ class SimpleXMLElement extends SimpleXMLE
      * @param string $namespace
      * @return SimpleXMLE
      */
-    public function addCdataChild($name, $value = null, $namespace = null): SimpleXMLE
+    public function addCdataChild($name, $value = null, $namespace = null)
     {
         $element = $this->addChild($name, null, $namespace);
         $dom = dom_import_simplexml($element);
