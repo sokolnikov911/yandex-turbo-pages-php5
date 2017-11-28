@@ -9,7 +9,7 @@ PHP5 Yandex Turbo Pages RSS feed generator
 [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
 [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
 
-Russian version of README you can find here: [README_RU.md](https://github.com/sokolnikov911/yandex-turbo-pages/blob/master/README_RU.md).
+Russian version of README you can find here: [README_RU.md](https://github.com/sokolnikov911/yandex-turbo-pages-php5/blob/master/README_RU.md).
 
 Yandex Turbo Pages valid RSS feed generator for PHP5.4+.
 
