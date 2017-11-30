@@ -15,7 +15,7 @@ interface ItemInterface
     public function __construct($turbo);
 
     /**
-     * Set item URL
+     * Set item title
      * @param string $title
      * @return ItemInterface
      */
