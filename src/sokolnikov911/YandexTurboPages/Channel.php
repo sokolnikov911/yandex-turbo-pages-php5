@@ -66,7 +66,7 @@ class Channel implements ChannelInterface
         return $this;
     }
 
-    public function adNetwork($type = self::AD_TYPE_YANDEX, $id = '', $turboAdId = '', $code = '')
+    public function adNetwork($type = self::AD_TYPE_YANDEX, $id = '', $turboAdId, $code = '')
     {
         $this->adType      = $type;
         $this->adId        = $id;
