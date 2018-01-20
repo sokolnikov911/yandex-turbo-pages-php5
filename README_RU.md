@@ -8,7 +8,7 @@ PHP5 RSS feed генератор для Турбо-страниц Яндекса
 [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
 [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
 [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
-
+[![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5)
 
 Генератор валидного RSS потока для Турбо-страниц Яндекса. Для этой работы этой версии пакета
 необходим PHP как минимум 5.4 версии.
