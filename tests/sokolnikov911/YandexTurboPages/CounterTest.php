@@ -25,16 +25,16 @@ class CounterTest extends TestCase
         $this->assertAttributeEquals($counterId, 'id', $counter);
     }
 
-    public function testAsXML()
-    {
-        $counterType = uniqid();
-        $counterId = uniqid();
-
-        $counter = new Counter($counterType, $counterId);
-
-        $expect = '
-            <yandex:analytics id="' . $counterId . '" type="' . $counterType . '"/>
-        ';
-        $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
-    }
+//    public function testAsXML()
+//    {
+//        $counterType = uniqid();
+//        $counterId = uniqid();
+//
+//        $counter = new Counter($counterType, $counterId);
+//
+//        $expect = '
+//            <yandex:analytics id="' . $counterId . '" type="' . $counterType . '"/>
+//        ';
+//        $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
+//    }
 }

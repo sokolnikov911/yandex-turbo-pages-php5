@@ -228,21 +228,21 @@ class ChannelTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expect, $channel->asXML()->asXML());
     }
 
-    public function testAsXMLWithCounters()
-    {
-        $channel = new Channel();
-        $yandexMetrika = new Counter(Counter::TYPE_YANDEX, 12345678);
-        $yandexMetrika->appendTo($channel);
-
-        $expect = "
-                <channel>
-                    <title/>
-                    <link/>
-                    <description/>
-                    <yandex:analytics id=\"12345678\" type=\"Yandex\"/>
-                </channel>
-        ";
-
-        $this->assertXmlStringEqualsXmlString($expect, $channel->asXML()->asXML());
-    }
+//    public function testAsXMLWithCounters()
+//    {
+//        $channel = new Channel();
+//        $yandexMetrika = new Counter(Counter::TYPE_YANDEX, 12345678);
+//        $yandexMetrika->appendTo($channel);
+//
+//        $expect = "
+//                <channel>
+//                    <title/>
+//                    <link/>
+//                    <description/>
+//                    <yandex:analytics id=\"12345678\" type=\"Yandex\"/>
+//                </channel>
+//        ";
+//
+//        $this->assertXmlStringEqualsXmlString($expect, $channel->asXML()->asXML());
+//    }
 }

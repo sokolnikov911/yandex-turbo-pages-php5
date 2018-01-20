@@ -183,36 +183,36 @@ class ItemTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
     }
 
-    public function testAsXMLWithRelated()
-    {
-        $data = $this->dataForXmlTests();
-
-        $item = new Item();
-        $item
-            ->author($data['author'])
-            ->pubDate($data['now'])
-            ->title($data['title'])
-            ->link($data['link'])
-            ->turboContent($data['turboContent'])
-            ->category($data['category']);
-
-        $relatedItemsList = new RelatedItemsList();
-        $item->addRelatedItemsList($relatedItemsList);
-
-        $expect = '
-        <item turbo="true">
-            <title>' . $data['title'] . '</title>
-            <link>' . $data['link'] . '</link>
-            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
-            <pubDate>' . $data['pubDate'] . '</pubDate>
-            <category>' . $data['category'] . '</category>
-            <author>' . $data['author'] . '</author>
-            <yandex:related/>
-        </item>
-        ';
-
-        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
-    }
+//    public function testAsXMLWithRelated()
+//    {
+//        $data = $this->dataForXmlTests();
+//
+//        $item = new Item();
+//        $item
+//            ->author($data['author'])
+//            ->pubDate($data['now'])
+//            ->title($data['title'])
+//            ->link($data['link'])
+//            ->turboContent($data['turboContent'])
+//            ->category($data['category']);
+//
+//        $relatedItemsList = new RelatedItemsList();
+//        $item->addRelatedItemsList($relatedItemsList);
+//
+//        $expect = '
+//        <item turbo="true">
+//            <title>' . $data['title'] . '</title>
+//            <link>' . $data['link'] . '</link>
+//            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
+//            <pubDate>' . $data['pubDate'] . '</pubDate>
+//            <category>' . $data['category'] . '</category>
+//            <author>' . $data['author'] . '</author>
+//            <yandex:related/>
+//        </item>
+//        ';
+//
+//        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
+//    }
 
     private function dataForXmlTests()
     {

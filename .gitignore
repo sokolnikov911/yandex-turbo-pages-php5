@@ -2,3 +2,4 @@
 /vendor
 /composer.lock
 /tests/cover
+php_errors.log
