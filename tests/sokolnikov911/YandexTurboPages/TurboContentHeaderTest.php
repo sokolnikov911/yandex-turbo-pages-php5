@@ -54,7 +54,7 @@ class TruboContentHeaderTest extends TestCase
         $this->assertEquals($expectedDom->saveHTML(), $actualDom->saveHTML());
     }
 
-    private function dataForHtml(): array
+    private function dataForHtml()
     {
         $data = [
             'titleH1' => 'First title line',
