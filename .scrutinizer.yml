@@ -1,0 +1,100 @@
+tools:
+    php_sim: false
+    php_pdepend: true
+    php_analyzer: true
+    php_code_coverage: true
+    external_code_coverage: false
+
+build:
+    nodes:
+        phphhvm:
+            environment:
+                php:
+                    version: hhvm
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php54:
+            environment:
+                php:
+                    version: 5.4.41
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php55:
+            environment:
+                php:
+                    version: 5.5.25
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php56:
+            environment:
+                php:
+                    version: 5.6.16
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php70:
+            environment:
+                php:
+                    version: 7.0.20
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php71:
+            environment:
+                php:
+                    version: 7.1.12
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php72:
+            environment:
+                php:
+                    version: 7.2.0
+            tests:
+                override:
+                    -
+                        command: 'phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+
+    environment:
+        php:
+            version: 7.2
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=tests/cover'
+                coverage:
+                    file: 'tests/cover'
+                    format: php-clover
+
+filter:
+    excluded_paths: [vendor/*, tests/*, examples/*]

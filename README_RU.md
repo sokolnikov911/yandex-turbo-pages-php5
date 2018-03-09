@@ -1,14 +1,11 @@
 PHP5 RSS feed генератор для Турбо-страниц Яндекса
 =====================================
 
-[![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
-[![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
-[![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
-[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
-[![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
-[![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
-[![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5)
-[![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5)
+|  |  |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  | [![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5) [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5) |
+| Travis CI | [![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5) |
+| Scrutinizer CI | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/build-status/master) |
 
 Генератор валидного RSS потока для Турбо-страниц Яндекса. Для этой работы этой версии пакета
 необходим PHP как минимум 5.4 версии.
@@ -120,5 +117,7 @@ composer.phar update
 
 
 ## License
+
+[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
 
 This library is licensed under the MIT License.
