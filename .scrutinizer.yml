@@ -9,6 +9,8 @@ build:
     nodes:
         phphhvm:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: hhvm
             tests:
@@ -17,6 +19,8 @@ build:
                         command: 'phpunit'
         php54:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 5.4.41
             tests:
@@ -28,6 +32,8 @@ build:
                             format: php-clover
         php55:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 5.5.25
             tests:
@@ -39,6 +45,8 @@ build:
                             format: php-clover
         php56:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 5.6.16
             tests:
@@ -50,6 +58,8 @@ build:
                             format: php-clover
         php70:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.0.20
             tests:
@@ -61,6 +71,8 @@ build:
                             format: php-clover
         php71:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.1.12
             tests:
@@ -72,6 +84,8 @@ build:
                             format: php-clover
         php72:
             environment:
+                postgresql: false
+                redis: false
                 php:
                     version: 7.2.0
             tests:
@@ -83,6 +97,8 @@ build:
                             format: php-clover
 
     environment:
+        postgresql: false
+        redis: false
         php:
             version: 7.2
     tests:
