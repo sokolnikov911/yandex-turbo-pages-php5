@@ -14,10 +14,7 @@ build:
             tests:
                 override:
                     -
-                        command: 'phpunit --coverage-clover=tests/cover'
-                        coverage:
-                            file: 'tests/cover'
-                            format: php-clover
+                        command: 'phpunit'
         php54:
             environment:
                 php:
