@@ -118,4 +118,6 @@ This Yandex Trurbo Pages RSS feed generator requires at least PHP5.4.
 
 ## License
 
+[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+
 This library is licensed under the MIT License.
