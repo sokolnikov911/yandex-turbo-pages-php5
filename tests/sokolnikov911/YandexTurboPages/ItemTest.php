@@ -264,7 +264,7 @@ class ItemTest extends TestCase
             <pubDate>' . $data['pubDate'] . '</pubDate>
             <category>' . $data['category'] . '</category>
             <author>' . $data['author'] . '</author>
-            <yandex:related/>
+            <yandex:related xmlns:yandex="http://news.yandex.ru" />
         </item>
         ';
 

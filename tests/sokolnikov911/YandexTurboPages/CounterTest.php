@@ -57,7 +57,7 @@ class CounterTest extends TestCase
         $counter = new Counter($counterType, $counterId);
 
         $expect = '
-            <yandex:analytics id="' . $counterId . '" type="' . $counterType . '"/>
+            <yandex:analytics id="' . $counterId . '" type="' . $counterType . '" xmlns:yandex="http://news.yandex.ru"/>
         ';
         $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
     }
@@ -70,7 +70,7 @@ class CounterTest extends TestCase
         $counter = new Counter($counterType, null, $counterUrl);
 
         $expect = '
-            <yandex:analytics url="' . $counterUrl . '" type="' . $counterType . '"/>
+            <yandex:analytics url="' . $counterUrl . '" type="' . $counterType . '" xmlns:yandex="http://news.yandex.ru"/>
         ';
         $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
     }

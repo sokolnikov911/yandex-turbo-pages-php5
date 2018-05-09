@@ -47,7 +47,7 @@ class Counter implements CounterInterface
         $urlPart = $this->url ? ' url="' . $this->url . '" ' : '';
 
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics type="'
-            . $this->type . '"' . $idPart . $urlPart . '></yandex:analytics>',
+            . $this->type . '"' . $idPart . $urlPart . ' xmlns:yandex="http://news.yandex.ru"></yandex:analytics>',
             LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
         return $xml;

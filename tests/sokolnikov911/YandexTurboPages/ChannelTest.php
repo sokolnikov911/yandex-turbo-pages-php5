@@ -239,7 +239,7 @@ class ChannelTest extends TestCase
                     <title/>
                     <link/>
                     <description/>
-                    <yandex:analytics id=\"12345678\" type=\"Yandex\"/>
+                    <yandex:analytics id=\"12345678\" type=\"Yandex\" xmlns:yandex=\"http://news.yandex.ru\" />
                 </channel>
         ";
 

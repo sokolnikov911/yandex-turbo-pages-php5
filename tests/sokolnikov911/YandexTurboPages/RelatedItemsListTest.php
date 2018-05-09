@@ -26,7 +26,7 @@ class RelatedItemsListTest extends TestCase
     public function testAsXML()
     {
         $relatedItemsList = new RelatedItemsList();
-        $expect = '<yandex:related/>';
+        $expect = '<yandex:related xmlns:yandex="http://news.yandex.ru"/>';
         $this->assertXmlStringEqualsXmlString($expect, $relatedItemsList->asXML()->asXML());
     }
 
@@ -37,7 +37,7 @@ class RelatedItemsListTest extends TestCase
             , 'http://www.site.com/image.jpg');
         $this->assertSame($relatedItemsList, $relatedItemsList->addItem($relatedItem));
         $expect = '
-        <yandex:related>
+        <yandex:related xmlns:yandex="http://news.yandex.ru">
             <link url="http://www.site.com/page.html" img="http://www.site.com/image.jpg">Title</link>
         </yandex:related>
         ';
