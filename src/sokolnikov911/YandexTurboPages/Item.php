@@ -27,6 +27,15 @@ class Item implements ItemInterface
     protected $author;
 
     /** @var string */
+    protected $fullText;
+
+    /** @var string */
+    protected $turboSource;
+
+    /** @var string */
+    protected $turboTopic;
+
+    /** @var string */
     protected $turboContent;
 
     /** @var RelatedItemsListInterface */
@@ -62,6 +71,18 @@ class Item implements ItemInterface
         return $this;
     }
 
+    public function turboSource($turboSource)
+    {
+        $this->turboSource = $turboSource;
+        return $this;
+    }
+
+    public function turboTopic($turboTopic)
+    {
+        $this->turboTopic = $turboTopic;
+        return $this;
+    }
+
     public function turboContent($turboContent)
     {
         $this->turboContent = $turboContent;
@@ -71,6 +92,12 @@ class Item implements ItemInterface
     public function author($author)
     {
         $this->author = $author;
+        return $this;
+    }
+
+    public function fullText($fullText)
+    {
+        $this->fullText = $fullText;
         return $this;
     }
 
@@ -98,13 +125,11 @@ class Item implements ItemInterface
         $xml->addCdataChild('turbo:content', $this->turboContent, 'http://turbo.yandex.ru');
         $xml->addChild('pubDate', date(DATE_RSS, $this->pubDate));
 
-        if (!empty($this->category)) {
-            $xml->addChild('category', $this->category);
-        }
-
-        if (!empty($this->author)) {
-            $xml->addChild('author', $this->author);
-        }
+        $xml->addChildWithValueChecking('category', $this->category);
+        $xml->addChildWithValueChecking('author', $this->author);
+        $xml->addChildWithValueChecking('yandex:full-text', $this->fullText, 'http://news.yandex.ru');
+        $xml->addChildWithValueChecking('turbo:topic', $this->turboTopic, 'http://turbo.yandex.ru');
+        $xml->addChildWithValueChecking('turbo:source', $this->turboSource, 'http://turbo.yandex.ru');
 
         if ($this->relatedItemsList) {
             $toDom = dom_import_simplexml($xml);

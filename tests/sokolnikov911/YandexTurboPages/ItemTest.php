@@ -37,6 +37,22 @@ class ItemTest extends TestCase
         $this->assertAttributeSame($link, 'link', $item);
     }
 
+    public function testTurboSource()
+    {
+        $turboSource = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->turboSource($turboSource));
+        $this->assertAttributeSame($turboSource, 'turboSource', $item);
+    }
+
+    public function testTurboTopic()
+    {
+        $turboTopic = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->turboTopic($turboTopic));
+        $this->assertAttributeSame($turboTopic, 'turboTopic', $item);
+    }
+
     public function testTurboContent()
     {
         $turboContent = uniqid();
@@ -59,6 +75,14 @@ class ItemTest extends TestCase
         $item = new Item();
         $this->assertSame($item, $item->author($author));
         $this->assertAttributeSame($author, 'author', $item);
+    }
+
+    public function testFullText()
+    {
+        $fullText = uniqid();
+        $item = new Item();
+        $this->assertSame($item, $item->fullText($fullText));
+        $this->assertAttributeSame($fullText, 'fullText', $item);
     }
 
     public function testPubDate()
@@ -140,6 +164,8 @@ class ItemTest extends TestCase
             ->title($data['title'])
             ->link($data['link'])
             ->turboContent($data['turboContent'])
+            ->turboSource($data['link'])
+            ->turboTopic($data['title'])
             ->category($data['category']);
 
         $expect = '
@@ -150,6 +176,37 @@ class ItemTest extends TestCase
             <pubDate>' . $data['pubDate'] . '</pubDate>
             <category>' . $data['category'] . '</category>
             <author>' . $data['author'] . '</author>
+            <turbo:topic xmlns:turbo="http://turbo.yandex.ru">' . $data['title'] . '</turbo:topic>
+            <turbo:source xmlns:turbo="http://turbo.yandex.ru">' . $data['link'] . '</turbo:source>
+        </item>
+        ';
+
+        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
+    }
+
+    public function testAsXMLWithFullText()
+    {
+        $data = $this->dataForXmlTests();
+
+        $item = new Item();
+        $item
+            ->author($data['author'])
+            ->pubDate($data['now'])
+            ->title($data['title'])
+            ->link($data['link'])
+            ->turboContent($data['turboContent'])
+            ->category($data['category'])
+            ->fullText($data['fullText']);
+
+        $expect = '
+        <item turbo="true">
+            <title>' . $data['title'] . '</title>
+            <link>' . $data['link'] . '</link>
+            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
+            <pubDate>' . $data['pubDate'] . '</pubDate>
+            <category>' . $data['category'] . '</category>            
+            <author>' . $data['author'] . '</author>                        
+            <yandex:full-text xmlns:yandex="http://news.yandex.ru">' . $data['fullText'] . '</yandex:full-text>
         </item>
         ';
 
@@ -183,36 +240,36 @@ class ItemTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
     }
 
-//    public function testAsXMLWithRelated()
-//    {
-//        $data = $this->dataForXmlTests();
-//
-//        $item = new Item();
-//        $item
-//            ->author($data['author'])
-//            ->pubDate($data['now'])
-//            ->title($data['title'])
-//            ->link($data['link'])
-//            ->turboContent($data['turboContent'])
-//            ->category($data['category']);
-//
-//        $relatedItemsList = new RelatedItemsList();
-//        $item->addRelatedItemsList($relatedItemsList);
-//
-//        $expect = '
-//        <item turbo="true">
-//            <title>' . $data['title'] . '</title>
-//            <link>' . $data['link'] . '</link>
-//            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
-//            <pubDate>' . $data['pubDate'] . '</pubDate>
-//            <category>' . $data['category'] . '</category>
-//            <author>' . $data['author'] . '</author>
-//            <yandex:related/>
-//        </item>
-//        ';
-//
-//        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
-//    }
+    public function testAsXMLWithRelated()
+    {
+        $data = $this->dataForXmlTests();
+
+        $item = new Item();
+        $item
+            ->author($data['author'])
+            ->pubDate($data['now'])
+            ->title($data['title'])
+            ->link($data['link'])
+            ->turboContent($data['turboContent'])
+            ->category($data['category']);
+
+        $relatedItemsList = new RelatedItemsList();
+        $item->addRelatedItemsList($relatedItemsList);
+
+        $expect = '
+        <item turbo="true">
+            <title>' . $data['title'] . '</title>
+            <link>' . $data['link'] . '</link>
+            <turbo:content xmlns:turbo="http://turbo.yandex.ru"><![CDATA[' . $data['turboContent'] . ']]></turbo:content>
+            <pubDate>' . $data['pubDate'] . '</pubDate>
+            <category>' . $data['category'] . '</category>
+            <author>' . $data['author'] . '</author>
+            <yandex:related/>
+        </item>
+        ';
+
+        $this->assertXmlStringEqualsXmlString($expect, $item->asXML()->asXML());
+    }
 
     private function dataForXmlTests()
     {
@@ -226,6 +283,7 @@ class ItemTest extends TestCase
             'turboContent' => 'Some content here!<br>Second content string.',
             'author'       => 'John Smith',
             'category'     => 'Auto',
+            'fullText'     => 'Some full text here!',
         ];
 
         return $data;

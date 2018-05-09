@@ -14,14 +14,25 @@ class Counter implements CounterInterface
     const TYPE_MAIL_RU          = 'MailRu';
     const TYPE_RAMBLER          = 'Rambler';
     const TYPE_YANDEX           = 'Yandex';
+    const TYPE_CUSTOM           = 'custom';
 
     private $type;
     private $id;
+    private $url;
 
-    public function __construct($type, $id)
+    public function __construct($type, $id = null, $url = null)
     {
         $this->type = $type;
-        $this->id = $id;
+        $this->id   = $id;
+        $this->url  = $url;
+
+        if ($type == self::TYPE_CUSTOM && !$url) {
+            throw new \UnexpectedValueException('Please set url for custom counter');
+        }
+
+        if ($type != self::TYPE_CUSTOM && !$id) {
+            throw new \UnexpectedValueException('Please set id for non custom counter');
+        }
     }
 
     public function appendTo(ChannelInterface $channel)
@@ -32,8 +43,11 @@ class Counter implements CounterInterface
 
     public function asXML()
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics id="'
-            . $this->id . '"  type="' . $this->type . '"></yandex:analytics>',
+        $idPart = $this->id ? ' id="' . $this->id . '" ' : '';
+        $urlPart = $this->url ? ' url="' . $this->url . '" ' : '';
+
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?><yandex:analytics type="'
+            . $this->type . '"' . $idPart . $urlPart . '></yandex:analytics>',
             LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
         return $xml;

@@ -24,4 +24,20 @@ class SimpleXMLElement extends SimpleXMLE
         $dom->appendChild($elementOwner->createCDATASection($value));
         return $element;
     }
+
+    /**
+     * Create Child with required Value
+     * @param string $name
+     * @param string $value
+     * @param string|null $namespace
+     * @return SimpleXMLE|bool
+     */
+    public function addChildWithValueChecking($name, $value = null, $namespace = null)
+    {
+        if ($value !== null) {
+            return $this->addChild($name, $value, $namespace);
+        }
+
+        return false;
+    }
 }
