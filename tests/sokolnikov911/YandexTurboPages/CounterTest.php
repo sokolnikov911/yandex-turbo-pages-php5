@@ -74,4 +74,26 @@ class CounterTest extends TestCase
         ';
         $this->assertXmlStringEqualsXmlString($expect, $counter->asXML()->asXML());
     }
+
+    /**
+     * @expectedException \UnexpectedValueException
+     */
+    public function testCustomCounterException()
+    {
+        $counterType = Counter::TYPE_CUSTOM;
+        $counterId = null;
+        $counterUrl = null;
+        new Counter($counterType, $counterId, $counterUrl);
+    }
+
+    /**
+     * @expectedException \UnexpectedValueException
+     */
+    public function testNonCustomCounterException()
+    {
+        $counterType = Counter::TYPE_YANDEX;
+        $counterId = null;
+        $counterUrl = null;
+        new Counter($counterType, $counterId, $counterUrl);
+    }
 }
