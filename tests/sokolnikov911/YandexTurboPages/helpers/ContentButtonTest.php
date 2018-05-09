@@ -47,10 +47,4 @@ class ContentButtonTest extends TestCase
                     formaction=\"" . $this->url . "\">" . $this->text . "</button>";
         $this->assertXmlStringEqualsXmlString($baseButton, $button);
     }
-
-    public function testButtonException()
-    {
-        $this->expectException(\UnexpectedValueException::class);
-        Content::button($this->text);
-    }
 }
