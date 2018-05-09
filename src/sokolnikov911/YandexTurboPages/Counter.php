@@ -26,11 +26,11 @@ class Counter implements CounterInterface
         $this->id   = $id;
         $this->url  = $url;
 
-        if ($type == self::TYPE_CUSTOM && !$url) {
+        if ($type == self::TYPE_CUSTOM && $url === null) {
             throw new \UnexpectedValueException('Please set url for custom counter');
         }
 
-        if ($type != self::TYPE_CUSTOM && !$id) {
+        if ($type != self::TYPE_CUSTOM && $id === null) {
             throw new \UnexpectedValueException('Please set id for non custom counter');
         }
     }
