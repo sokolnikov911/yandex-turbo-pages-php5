@@ -30,6 +30,15 @@ class RelatedItemsListTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expect, $relatedItemsList->asXML()->asXML());
     }
 
+    public function testAsXMLWithInfinity()
+    {
+        $relatedItemsList = new RelatedItemsList(true);
+        $expect = '<yandex:related xmlns:yandex="http://news.yandex.ru" type="infinity" />';
+
+        $this->assertXmlStringEqualsXmlString($expect, $relatedItemsList->asXML()->asXML());
+    }
+
+
     public function testAsXMLWithRelatedPage()
     {
         $relatedItemsList = new RelatedItemsList();
