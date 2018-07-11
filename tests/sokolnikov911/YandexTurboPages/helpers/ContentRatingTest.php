@@ -16,21 +16,27 @@ class ContentRatingTest extends TestCase
         $this->assertXmlStringEqualsXmlString($rating, $code);
     }
 
+    /**
+     * @expectedException \UnexpectedValueException
+     */
     public function testBigCurrentValueException()
     {
-        $this->expectException(\UnexpectedValueException::class);
         Content::rating(6, 5);
     }
 
+    /**
+     * @expectedException \UnexpectedValueException
+     */
     public function testIncorrectMaxValueException()
     {
-        $this->expectException(\UnexpectedValueException::class);
         Content::rating(6, -1);
     }
 
+    /**
+     * @expectedException \UnexpectedValueException
+     */
     public function testZeroMaxValueException()
     {
-        $this->expectException(\UnexpectedValueException::class);
         Content::rating(6, 0);
     }
 }
