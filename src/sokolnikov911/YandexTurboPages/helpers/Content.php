@@ -86,8 +86,8 @@ class Content
 
     /**
      * Generate rating block
-     * @param integer $currentRating
-     * @param integer $maxRating
+     * @param float $currentRating
+     * @param float $maxRating
      * @return string
      */
     public static function rating($currentRating, $maxRating)
