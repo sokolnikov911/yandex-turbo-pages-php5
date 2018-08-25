@@ -108,6 +108,7 @@ class Content
      * @param float $currentRating
      * @param float $maxRating
      * @return string
+     * @throws \UnexpectedValueException
      */
     public static function rating($currentRating, $maxRating)
     {
@@ -131,6 +132,7 @@ class Content
      * @param bool $isBoldText
      * @param bool $isDisabled
      * @return string
+     * @throws \UnexpectedValueException
      */
     public static function button($text, $url = '', $phone = '',
                                   $buttonColor = null, $textColor = null,
@@ -221,6 +223,18 @@ class Content
         $accordionString .= '</div>';
 
         return $accordionString;
+    }
+
+    /**
+     * Generate Ad block position element
+     * @param string $turboAdId value of $turboAdId used in Channel() class
+     * @return string
+     *
+     * @see Channel::$adTurboAdId
+     */
+    public static function adBlockPosition($turboAdId)
+    {
+        return '<figure data-turbo-ad-id="' . $turboAdId . '"></figure>';
     }
 
     private static function generateCommentBlock(array $commentsArray)
