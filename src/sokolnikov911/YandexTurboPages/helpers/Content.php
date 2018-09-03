@@ -11,6 +11,13 @@ class Content
     const SHARE_TYPE_TWITTER   = 'twitter';
     const SHARE_TYPE_VKONTAKTE = 'vkontakte';
 
+    const SLIDER_DATA_VIEW_SQUARE = 'square';
+    const SLIDER_DATA_VIEW_PORTRAIT = 'portrait';
+    const SLIDER_DATA_VIEW_LANDSCAPE = 'landscape';
+
+    const SLIDER_DATA_ITEM_VIEW_COVER = 'cover';
+    const SLIDER_DATA_ITEM_VIEW_CONTAIN = 'contain';
+
     const OWN_VIDEO_TYPE_MP4 = 'video/mp4';
 
     /**
