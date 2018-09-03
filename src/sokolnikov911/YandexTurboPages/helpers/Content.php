@@ -226,6 +226,32 @@ class Content
     }
 
     /**
+     * Generate media slider
+     * @param array $itemsArray Array of items with data
+     * [
+     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+     *     ['url' => 'http://example.com/image3.jpg'],
+     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     * ]
+     * @param string|null $header
+     * @param string $dataView
+     * @param string $dataItemView
+     * @return string
+     */
+    public static function slider(array $itemsArray, $header = null,
+                                  $dataView = self::SLIDER_DATA_VIEW_SQUARE,
+                                  $dataItemView = self::SLIDER_DATA_ITEM_VIEW_COVER)
+    {
+        $sliderString = $header ? '<header>' . $header . '</header>' : '';
+
+        $sliderString .= self::generateSliderItemsBlock($itemsArray);
+
+        return '<div data-block="slider" data-view="' . $dataView . '" data-item-view="'
+            . $dataItemView . '">' . $sliderString . '</div>';
+    }
+
+    /**
      * Generate Ad block position element
      * @param string $turboAdId value of $turboAdId used in Channel() class
      * @return string
@@ -235,6 +261,40 @@ class Content
     public static function adBlockPosition($turboAdId)
     {
         return '<figure data-turbo-ad-id="' . $turboAdId . '"></figure>';
+    }
+
+    /**
+     * Generate content block for media slider
+     * @param array $itemsArray Array of items with data
+     * [
+     *     ['url' => 'http://example.com/image1.jpg', 'title' => 'Image title 1', 'link' => ''],
+     *     ['url' => 'http://example.com/image2.jpg', 'title' => 'Image title 2', 'link' => ''],
+     *     ['url' => 'http://example.com/image3.jpg'],
+     *     ['href' => 'http://example.com/page1.html', 'title' => 'Link title 1', 'text' => 'Link text 1']
+     * ]
+     * @return string
+     */
+    private static function generateSliderItemsBlock(array $itemsArray)
+    {
+        $sliderString = '';
+
+        foreach ($itemsArray as $item) {
+            $sliderString .= '<figure>';
+
+            if (isset($item['title'])) {
+                $sliderString .= '<figcaption>' . $item['title'] . '</figcaption>';
+            }
+
+            if (isset($item['url'])) {
+                $sliderString .= '<img src="' . $item['url'] . '" />';
+            } elseif (isset($item['href'])) {
+                $sliderString .= '<a href="' . $item['href'] . '">' . $item['text'] . '</a>';
+            }
+
+            $sliderString .= '</figure>';
+        }
+
+        return $sliderString;
     }
 
     private static function generateCommentBlock(array $commentsArray)
