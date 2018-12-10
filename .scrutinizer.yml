@@ -113,7 +113,7 @@ build:
         postgresql: false
         redis: false
         php:
-            version: 7.3
+            version: 7.2
     tests:
         override:
             -
