@@ -22,7 +22,7 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 5.4.41
+                    version: 5.4.45
             tests:
                 override:
                     -
@@ -35,7 +35,7 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 5.5.25
+                    version: 5.5.38
             tests:
                 override:
                     -
@@ -48,7 +48,7 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 5.6.16
+                    version: 5.6.39
             tests:
                 override:
                     -
@@ -61,7 +61,7 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 7.0.20
+                    version: 7.0.33
             tests:
                 override:
                     -
@@ -74,7 +74,7 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 7.1.12
+                    version: 7.1.25
             tests:
                 override:
                     -
@@ -87,7 +87,20 @@ build:
                 postgresql: false
                 redis: false
                 php:
-                    version: 7.2.0
+                    version: 7.2.13
+            tests:
+                override:
+                    -
+                        command: 'vendor/phpunit/phpunit/phpunit --coverage-clover=tests/cover'
+                        coverage:
+                            file: 'tests/cover'
+                            format: php-clover
+        php73:
+            environment:
+                postgresql: false
+                redis: false
+                php:
+                    version: 7.3.0
             tests:
                 override:
                     -
@@ -100,7 +113,7 @@ build:
         postgresql: false
         redis: false
         php:
-            version: 7.2
+            version: 7.3
     tests:
         override:
             -
